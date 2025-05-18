@@ -184,7 +184,7 @@ async function generatePDF(SHEET_ID) {
 
                 {text: " ", pageBreak: "before"},
                 {
-                    image: "https://cyprienbons.com/img/Logo_COBE.png",
+                    image: "https:/cobescalade.cyprienbons.com/img/Logo_COBE.png",
                     width: 405,
                     alignment: "center",
                 },
