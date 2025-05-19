@@ -276,85 +276,85 @@ tr {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   html {
-    font-size: 12px;
+    font-size: 75%;
   }
 
   h1 {
-    font-size: 1.25rem;
+    font-size: 1.6667rem;
   }
 
   h2 {
-    font-size: 0.625rem;
+    font-size: 0.8333rem;
   }
 
   h3 {
-    font-size: 0.9375rem;
+    font-size: 1.25rem;
   }
 
   .carre {
-    width: 0.6875rem;
-    height: 0.6875rem;
+    width: 0.9167rem;
+    height: 0.9167rem;
   }
 
   .carre1 {
-    width: 0.9375rem;
-    height: 0.9375rem;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 
   .carre2 {
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 0.6667rem;
+    height: 0.6667rem;
   }
 
   .carre3 {
-    width: 0.3125rem;
-    height: 1.875rem;
+    width: 0.4167rem;
+    height: 2.5rem;
   }
 
   p {
-    font-size: 0.625rem;
+    font-size: 0.8333rem;
   }
 
   a {
-    font-size: 0.625rem;
+    font-size: 0.8333rem;
   }
 
   .bonton1, .bonton2 {
-    height: 1.875rem;
-    width: 7.5rem;
+    height: 2.5rem;
+    width: 10rem;
   }
 
   .bonton3 {
-    height: 1.875rem;
-    width: 7.5rem;
+    height: 2.5rem;
+    width: 10rem;
   }
 
   .profil1 {
-    padding: 1.5625rem 2.8125rem;
+    padding: 2.0833rem 3.75rem;
   }
 
   .profil2 {
-    padding-left: 1.5625rem;
+    padding-left: 2.0833rem;
   }
 
   .imgprofil {
-    width: 10rem;
-    height: 10rem;
+    width: 13.3333rem;
+    height: 13.3333rem;
   }
 
   .titreprofil {
-    font-size: 4.375rem;
+    font-size: 5.8333rem;
   }
 
   .titreprofil2 {
-    font-size: 1.5625rem;
+    font-size: 2.0833rem;
   }
 
   .bontonindex {
-    padding: 1.25rem 0.625rem;
-    gap: 0.9375rem;
+    padding: 1.6667rem 0.8333rem;
+    gap: 1.25rem;
   }
 
   .section {
@@ -363,23 +363,23 @@ tr {
 
   .sectioncv2, .sectioncv3 {
     margin: 0;
-    padding: 0.625rem;
+    padding: 0.8333rem;
   }
 
   .image-projet {
-    width: 6.25rem;
+    width: 8.3333rem;
   }
 
   .text-page-title {
-    font-size: 2.1875rem;
+    font-size: 2.9167rem;
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 34.375rem) {
   .footer {
     flex-direction: column;
     align-items: center;
-    padding: 0.625rem 0;
+    padding: 0.8333rem 0;
   }
 
   .footer2 {
@@ -393,7 +393,7 @@ tr {
 
   .image-container {
     width: 100%;
-    height: 15.625rem;
+    height: 20.8333rem;
   }
 
   .sectionprojet1 {
@@ -403,12 +403,12 @@ tr {
 
   .sectioncv2 {
     margin: 0;
-    padding: 0.625rem;
+    padding: 0.8333rem;
   }
 
   .sectioncv3 {
     margin: 0;
-    padding: 0.625rem;
+    padding: 0.8333rem;
   }
 
   .competencecv {
@@ -416,7 +416,7 @@ tr {
   }
 
   .competencecv2 {
-    padding: 0.3125rem;
+    padding: 0.4167rem;
   }
 
   .secret {
@@ -431,7 +431,7 @@ tr {
 
   .profil {
     right: 0;
-    padding: 0.625rem;
+    padding: 0.8333rem;
   }
 
   .left {
@@ -440,36 +440,36 @@ tr {
   }
 
   .profil1 {
-    padding: 0.625rem;
+    padding: 0.8333rem;
   }
 
   .profil2 {
-    padding-left: 1.25rem;
+    padding-left: 1.6667rem;
   }
 
   .imgprofil {
-    width: 6.25rem;
-    height: 6.25rem;
+    width: 8.3333rem;
+    height: 8.3333rem;
   }
 
   .titreprofil {
-    font-size: 2.5rem;
+    font-size: 3.3333rem;
   }
 
   .titreprofil2 {
-    font-size: 1.25rem;
+    font-size: 1.6667rem;
   }
 
   .bontonindex {
-    padding: 0.625rem;
+    padding: 0.8333rem;
   }
 
   .profilicon {
-    gap: 0.625rem;
+    gap: 0.8333rem;
   }
 
   .footer {
-    padding: 0.625rem 0;
+    padding: 0.8333rem 0;
   }
 
   .image-projet {
@@ -481,106 +481,106 @@ tr {
   }
 
   .text-page-title {
-    font-size: 1.5625rem;
+    font-size: 2.0833rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
   html {
-    font-size: 10px;
+    font-size: 62.5%;
   }
 
   h1 {
-    font-size: 0.9375rem;
+    font-size: 1.5rem;
   }
 
   h2 {
-    font-size: 0.625rem;
+    font-size: 1rem;
   }
 
   h3 {
-    font-size: 0.625rem;
+    font-size: 1rem;
   }
 
   .carre {
-    width: 0.375rem;
-    height: 0.375rem;
+    width: 0.6rem;
+    height: 0.6rem;
   }
 
   .carre1 {
-    width: 0.625rem;
-    height: 0.625rem;
+    width: 1rem;
+    height: 1rem;
   }
 
   .carre2 {
-    width: 0.1875rem;
-    height: 0.1875rem;
+    width: 0.3rem;
+    height: 0.3rem;
   }
 
   .carre3 {
-    width: 0.125rem;
-    height: 1.25rem;
+    width: 0.2rem;
+    height: 2rem;
   }
 
   p {
-    font-size: 0.625rem;
+    font-size: 1rem;
   }
 
   a {
-    font-size: 0.625rem;
+    font-size: 1rem;
   }
 
   .bonton1 {
-    height: 1.25rem;
-    width: 5rem;
+    height: 2rem;
+    width: 8rem;
   }
 
   .bonton2 {
-    height: 1.25rem;
-    width: 5rem;
+    height: 2rem;
+    width: 8rem;
   }
 
   .bonton3 {
-    height: 1.5625rem;
-    width: 6.875rem;
+    height: 2.5rem;
+    width: 11rem;
   }
 
   .text-page-title {
-    font-size: 1.25rem;
+    font-size: 2rem;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 25rem) {
   .header {
     flex-direction: column;
   }
 
   h1. {
-    font-size: 0.625rem;
+    font-size: 1rem;
   }
 
   .bontonindex {
-    padding: 0.625rem 0;
-    gap: 0.3125rem;
+    padding: 1rem 0;
+    gap: 0.5rem;
   }
 
   .profil2 {
-    padding-left: 1.25rem;
+    padding-left: 2rem;
   }
 
   .imgprofil {
-    width: 5rem;
-    height: 5rem;
+    width: 8rem;
+    height: 8rem;
   }
 
   .profil2 .bonton1 {
-    height: 1.25rem;
-    width: 3.75rem;
+    height: 2rem;
+    width: 6rem;
   }
 
   .profil2 .bonton2 {
-    height: 1.25rem;
-    width: 3.75rem;
+    height: 2rem;
+    width: 6rem;
   }
 
   .sectioncv2 {
