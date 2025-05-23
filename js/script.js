@@ -137,7 +137,7 @@ window.addEventListener("DOMContentLoaded", () => {
     buttonFeuille(SHEET_ID);
 });
 
-async function generatePDF(SHEET_ID, YEAR) {
+async function generatePDF(SHEET_ID, YEAR, NAME) {
     try {
         const body = await tableauTopo(SHEET_ID);
 
@@ -163,7 +163,7 @@ async function generatePDF(SHEET_ID, YEAR) {
 
         const docDefinition = {
             content: [
-                {text: "Challenge 2025", style: "header"},
+                {text: "Challenge " + YEAR + " - " + NAME, style: "header"},
                 {
                     table: {
                         headerRows: 2,
@@ -176,7 +176,7 @@ async function generatePDF(SHEET_ID, YEAR) {
                 {
                     table: {
                         headerRows: 1,
-                        widths: [60, "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
+                        widths: [60, "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
                         body: point,
                     },
                 },
@@ -192,9 +192,10 @@ async function generatePDF(SHEET_ID, YEAR) {
                 },
 
                 {text: " ", pageBreak: "before"},
+                {text: "Challenge " + YEAR + " - " + NAME, style: "header"},
                 {
                     image: imgDate,
-                    width: 405,
+                    width: 390,
                     alignment: "center",
                 },
             ],
@@ -212,7 +213,7 @@ async function generatePDF(SHEET_ID, YEAR) {
                     fillColor: "#f2f2f2",
                 },
                 tableBody: {
-                    fontSize: 6,
+                    fontSize: 5,
                     alignment: "center",
                     margin: [0, 0, 0, 0],
                 },
@@ -315,7 +316,7 @@ async function tableauTopo(SHEET_ID) {
 
 async function tableauPoint(SHEET_ID) {
     const sheetName = "Point";
-    const range = "C7:R14";
+    const range = "C7:O14";
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}!${range}?key=${API_KEY}`;
     const response = await fetch(url);
     const data = await response.json();
@@ -327,8 +328,8 @@ async function tableauPoint(SHEET_ID) {
 
     const body = [
         [
-            {text: "POINTS", colSpan: 16, style: "tableHeader"},
-            {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {},
+            {text: "POINTS", colSpan: 13, style: "tableHeader"},
+            {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {},
         ],
     ];
 
