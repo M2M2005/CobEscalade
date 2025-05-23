@@ -192,10 +192,9 @@ async function generatePDF(SHEET_ID, YEAR, NAME) {
                 },
 
                 {text: " ", pageBreak: "before"},
-                {text: "Challenge " + YEAR + " - " + NAME, style: "header"},
                 {
                     image: imgDate,
-                    width: 390,
+                    width: 405,
                     alignment: "center",
                 },
             ],
