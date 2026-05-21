@@ -102,6 +102,7 @@ async function sheetDataResultat(sheetName, button, container, range, SHEET_ID) 
         }
 
         const table = document.createElement("table");
+        table.className = "results-table";
 
         data.values.forEach(row => {
           if (row.length !== 1) {
@@ -134,7 +135,11 @@ async function sheetDataResultat(sheetName, button, container, range, SHEET_ID) 
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  buttonFeuille(SHEET_ID);
+  // Uniquement appeler buttonFeuille si SHEET_ID est défini (pages anciennes)
+  // Pour result.html, c'est appelé après loadCompetition()
+  if (typeof SHEET_ID !== 'undefined' && SHEET_ID !== '') {
+    buttonFeuille(SHEET_ID);
+  }
 });
 
 async function generatePDF(SHEET_ID, YEAR, NAME) {
