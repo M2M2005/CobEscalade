@@ -3,108 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compétition Résultat</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Ceb - Compétition d'Escalade</title>
+    <link rel="stylesheet" href="./css/output.css?v=4">
     <link rel="icon" type="image/png" href="img/Logo_COBE.png">
-    <script defer src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="components/header.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="components/spa-navigation.js"></script>
+    <!-- Version scripts (v2/v3) are loaded dynamically by spa-navigation.js -->
 </head>
-<header>
-    <a href="index.html" class="header">
-        <div style="display: flex; align-items: center">
-            <div class="carre"></div>
-            <h1>Compétition Escalade</h1>
+<div id="header-placeholder" data-home="true" data-subtitle="Compétitions"></div>
+<body class="m-0">
+
+<!-- HOME VIEW -->
+<div id="home-view">
+<div class="page-container">
+    <div class="content-width">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="flex items-center justify-center gap-4 mb-6">
+                <div class="w-6 h-6 bg-neutral-950 rounded-lg"></div>
+                <h1 class="hero-title">Un Max de Grimpe !</h1>
+            </div>
+            <p class="hero-subtitle">
+                Consultez les résultats de toutes les compétitions d'escalade organisées par Ceb
+            </p>
         </div>
-        <div>/ COBEscalade</div>
-    </a>
-    <div class="header2">
-        <a href="index.html" class="actuel">Menu</a>
-    </div>
-    <!-- Bouton burger -->
-    <div class="burger-menu" id="burger-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <!-- Menu déroulant pour le burger -->
-    <nav class="burger-nav" id="burger-nav">
-        <a href="index.html" class="actuel">Menu</a>
-    </nav>
-</header>
-<body style="margin: 0;">
-<div class="cvprojet">
-    <div class="resWidth">
-        <div style="display: flex; align-items: center; justify-content: center">
-            <div class="carre1"></div>
-            <p class="text-page-title"><strong>Résultats</strong></p>
-        </div>
-        <div style="display: flex; justify-content: space-between; margin: 20px 0;">
-            <h1>Challenge 2024</h1>
-        </div>
-        <div class="section">
-            <div class="sectionEscalade">
-                <h3>Résultat 9 juin 2024</h3>
-                <div style="display: flex; margin: 20px; gap: 20px">
-                    <a href="2024/2024.html" class="bonton2">
-                        <p style="margin: 0;">Journée</p>
-                    </a>
+
+        <!-- Challenges Grid -->
+        <div class="challenge-grid">
+            <!-- Challenge 2026 -->
+            <div class="challenge-card">
+                <div class="flex items-baseline gap-4 mb-6">
+                    <h2 class="challenge-year">2026</h2>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-neutral-950 text-white">
+                        En cours
+                    </span>
+                </div>
+                <p class="challenge-date uppercase">Vendredi 6 Juin 2026</p>
+
+                <div class="session-grid">
+                    <div onclick="showResults('1iS7tob_DTQyvr2ZlpB1GVHMZV-8M0uIH0E9YU_Y0dVc', 2026, 'Résultats 2026', 'Session Matin - Vendredi 6 Juin 2026', '9h00 - 12h00', 'v3')" class="session-card cursor-pointer">
+                        <div class="session-time">Session matinale</div>
+                        <div class="session-label">Matin</div>
+                    </div>
+
+                    <div onclick="showResults('YOUR_GOOGLE_SHEET_ID_HERE_FOR_2026_APRESMIDI', 2026, 'Résultats 2026', 'Session Après-midi - Vendredi 6 Juin 2026', '14h00 - 17h00', 'v3')" class="session-card cursor-pointer">
+                        <div class="session-time">Session après-midi</div>
+                        <div class="session-label">Après-midi</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div style="display: flex; justify-content: space-between; margin: 20px 0;">
-            <h1>Challenge 2025</h1>
-        </div>
-        <div class="section">
-            <div class="sectionEscalade">
-                <h3>Résultats Samedi 24 Mai 2025</h3>
-                <div style="display: flex; margin: 20px; gap: 20px">
-                    <a href="2025/2025_SM.html" class="bonton2">
-                        <p style="margin: 0;">Matin</p>
-                    </a>
-                    <a href="2025/2025_SAM.html" class="bonton2">
-                        <p style="margin: 0;">Après midi</p>
-                    </a>
+
+            <!-- Challenge 2025 -->
+            <div class="challenge-card">
+                <div class="flex items-baseline gap-4 mb-6">
+                    <h2 class="challenge-year">2025</h2>
                 </div>
-                <h3>Résultats Dimanche 25 Mai 2025</h3>
-                <div style="display: flex; margin: 20px; gap: 20px">
-                    <a href="2025/2025_DM.html" class="bonton2">
-                        <p style="margin: 0;">Matin</p>
-                    </a>
-                    <a href="2025/2025_DAM.html" class="bonton2">
-                        <p style="margin: 0;">Après midi</p>
-                    </a>
+                <div class="grid grid-cols-1 gap-4">
+                    <div>
+                        <p class="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-3">Samedi 24 Mai</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div onclick="showResults('1bJMWVqT8IDfBHO0fxysPmwYLQKutlynk7B1wtM9ZBds', 2025, 'Résultats 2025', 'Samedi Matin - 24 Mai 2025', null, 'v2')" class="session-card cursor-pointer">
+                                <div class="session-time">Session matinale</div>
+                                <div class="session-label">Matin</div>
+                            </div>
+                            <div onclick="showResults('1sZFRH6Ds0SZIjnF0-dN0Pjx-NGzP8y0EBA5RtW1NZNY', 2025, 'Résultats 2025', 'Samedi Après-midi - 24 Mai 2025', null, 'v2')" class="session-card cursor-pointer">
+                                <div class="session-time">Session après-midi</div>
+                                <div class="session-label">Après-midi</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-3">Dimanche 25 Mai</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div onclick="showResults('1tNyd307S7aXAtwoLDpgf2gEs6Gco3Or6SvxNLkAHxyc', 2025, 'Résultats 2025', 'Dimanche Matin - 25 Mai 2025', null, 'v2')" class="session-card cursor-pointer">
+                                <div class="session-time">Session matinale</div>
+                                <div class="session-label">Matin</div>
+                            </div>
+                            <div onclick="showResults('1Z_B4KUr96XSz89_acaMEUdGajqdUXBBu70EpkF-XicA', 2025, 'Résultats 2025', 'Dimanche Après-midi - 25 Mai 2025', null, 'v2')" class="session-card cursor-pointer">
+                                <div class="session-time">Session après-midi</div>
+                                <div class="session-label">Après-midi</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Challenge 2024 -->
+            <div class="challenge-card">
+                <div class="flex items-baseline gap-4 mb-6">
+                    <h2 class="challenge-year">2024</h2>
+                </div>
+                <p class="challenge-date uppercase">Dimanche 9 Juin 2024</p>
+
+                <div class="session-grid">
+                    <div onclick="showResults('14Dse1k-RlzAhD8Gl6MAZEoSnLGrCVhZ8tGWWibuzVgQ', 2024, 'Résultats 2024', 'Dimanche 9 Juin 2024', null, 'v2')" class="session-card cursor-pointer">
+                        <div class="session-time">Journée complète</div>
+                        <div class="session-label">Résultats</div>
+                        <p class="text-xs text-neutral-500 mt-2">Toute la journée</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</body>
-<footer>
-    <div class="footer">
-        <div>
-            <p>Cyprien Bons 2025</p>
-        </div>
-        <div class="footer2">
-            <div>
-                <h2>Tel</h2>
-                <a href="tel:0768512006" target="_blank">07 68 51 20 06</a>
-            </div>
-            <div>
-                <h2>Email</h2>
-                <a href="mailto:pro.bons.cyprien@gmail.com" target="_blank">pro.bons.cyprien@gmail.com</a>
-            </div>
-            <div>
-                <h2>En ligne</h2>
-                <div style="display: flex; justify-content: space-between; gap: 10px">
-                    <a href="https://www.linkedin.com/in/cyprien-bons/" target="_blank">
-                        <img src="img/linkedin.svg" alt="Linkedin" style="width: 18px;">
-                    </a>
-                    <a href="https://github.com/M2M2005" target="_blank">
-                        <img src="img/github.svg" alt="GitHub" style="width: 18px;">
-                    </a>
-                </div>
+</div>
+<!-- END HOME VIEW -->
+
+<!-- RESULT VIEW -->
+<div id="result-view" style="display: none;">
+<div class="page-container">
+    <div class="content-width">
+        <!-- Title Section -->
+        <div class="flex items-center justify-center gap-4 mb-8">
+            <div class="w-6 h-6 bg-neutral-950 rounded-lg"></div>
+            <div class="text-center">
+                <p id="result-title" class="text-5xl font-bold text-neutral-950 mb-2">Chargement...</p>
+                <p id="result-date" class="text-xl text-neutral-600">...</p>
+                <p id="result-time" class="text-sm text-neutral-500 mt-2" style="display: none;"></p>
             </div>
         </div>
+
+        <!-- Results Container (populated by JS) -->
+        <div id="results" class="space-y-4"></div>
     </div>
-</footer>
+
+    <!-- PDF Button -->
+    <div class="flex justify-center p-5 gap-5 mt-8">
+        <button id="pdf-button" class="btn-large">
+            Topo
+        </button>
+        <button onclick="showHome()" class="btn-large">
+            Retour
+        </button>
+    </div>
+</div>
+</div>
+<!-- END RESULT VIEW -->
+
+</body>
+<div id="footer-placeholder"></div>
 </html>

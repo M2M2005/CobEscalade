@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init -y)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:css:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(dir:*)",
+      "Bash(npm run build:prod:*)",
+      "Bash(npx tailwindcss:*)",
+      "Bash(test:*)",
+      "Bash(ls:*)",
+      "Bash(perl:*)",
+      "WebFetch(domain:docs.google.com)"
+    ]
+  }
+}

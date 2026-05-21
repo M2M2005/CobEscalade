@@ -1,0 +1,696 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-sans antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-3 h-3;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted rounded-lg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-400 rounded-lg hover:bg-neutral-500 transition-colors;
+  }
+}
+
+@layer components {
+  /* HEADER */
+  .header-container {
+    @apply flex justify-between items-center px-4 py-6 sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-neutral-100;
+  }
+
+  .header-logo {
+    @apply flex items-center gap-2 text-neutral-950 hover:opacity-80 transition-opacity;
+  }
+
+  .header-logo img {
+    @apply w-12 h-12;
+  }
+
+  .header-logo h1 {
+    @apply text-xl;
+  }
+
+  .header-logo span {
+    @apply text-sm;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-nav-link {
+    @apply text-neutral-950 hover:text-neutral-600 transition-colors;
+  }
+
+  .header-nav-link-active {
+    @apply text-neutral-950 font-semibold;
+  }
+
+  /* BURGER MENU */
+  .burger-btn {
+    @apply flex flex-col justify-between w-6 h-5 cursor-pointer hover:opacity-70 transition-opacity;
+  }
+
+  .burger-line {
+    @apply block h-0.5 bg-neutral-950 rounded-full transition-all duration-300;
+  }
+
+  .burger-menu {
+    @apply fixed top-[73px] right-4 bg-white shadow-2xl rounded-xl overflow-hidden z-50 min-w-[200px] border border-neutral-200;
+    display: none;
+    flex-direction: column;
+  }
+
+  .burger-menu.active {
+    display: flex;
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .burger-menu-link {
+    @apply px-6 py-4 text-center text-neutral-950 border-b border-neutral-100 hover:bg-neutral-50 transition-colors font-medium;
+  }
+
+  .burger-menu-link:last-child {
+    border-bottom: 0;
+  }
+
+  /* BOUTONS */
+  .btn-primary {
+    @apply h-9 w-full flex items-center justify-center text-center text-sm rounded-full bg-neutral-950 text-white hover:bg-neutral-800 active:scale-95 transition-all duration-300 font-medium;
+  }
+
+  .btn-secondary {
+    @apply h-9 w-full flex items-center justify-center text-center text-sm rounded-full bg-white border-2 border-neutral-950 text-neutral-950 hover:bg-neutral-950 hover:text-white active:scale-95 transition-all duration-300 font-medium;
+  }
+
+  .btn-large {
+    @apply h-11 flex items-center justify-center text-center text-sm rounded-full bg-neutral-950 text-white hover:bg-neutral-800 active:scale-95 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl px-8 min-w-[140px];
+  }
+
+  /* SECTIONS */
+  .section-container {
+    @apply bg-white shadow-xl rounded-2xl p-6 my-5;
+  }
+
+  .section-escalade {
+    @apply justify-center p-4;
+  }
+
+  .page-container {
+    @apply flex justify-center items-center flex-col py-6 bg-neutral-100 min-h-[calc(100vh-140px)];
+  }
+
+  .content-width {
+    @apply w-full max-w-6xl px-3;
+  }
+
+  /* CARDS */
+  .challenge-card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-4 border border-neutral-200;
+  }
+
+  .challenge-grid {
+    @apply grid grid-cols-1 gap-4 mt-6;
+  }
+
+  .challenge-year {
+    @apply text-4xl font-bold mb-2 bg-gradient-to-r from-neutral-950 to-neutral-600 bg-clip-text text-transparent leading-tight;
+  }
+
+  .challenge-date {
+    @apply text-xs text-neutral-500 mb-4 font-medium;
+  }
+
+  .session-grid {
+    @apply grid grid-cols-1 gap-3;
+  }
+
+  .session-card {
+    @apply bg-neutral-50 rounded-lg p-3 hover:bg-neutral-100 active:bg-neutral-200 transition-all duration-300 border border-neutral-200 hover:scale-105 active:scale-100;
+  }
+
+  .session-card.cursor-pointer {
+    cursor: pointer;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  }
+
+  .session-card.cursor-pointer:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+
+  .session-time {
+    @apply text-[10px] text-neutral-500 font-semibold uppercase tracking-wide mb-1;
+  }
+
+  .session-label {
+    @apply text-base font-semibold text-neutral-950;
+  }
+
+  .hero-section {
+    @apply text-center mb-8 px-2;
+  }
+
+  .hero-title {
+    @apply text-3xl font-bold text-neutral-950 mb-3 leading-tight;
+  }
+
+  .hero-subtitle {
+    @apply text-sm text-neutral-600 max-w-2xl mx-auto px-4;
+  }
+
+  /* TABLES */
+  .results-table {
+    @apply w-full mt-5 shadow-xl rounded-lg overflow-x-auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .results-table {
+      display: table;
+    }
+  }
+
+  .results-table thead,
+  .results-table tbody {
+    @apply block;
+  }
+
+  @media (min-width: 768px) {
+    .results-table thead,
+    .results-table tbody {
+      display: table-header-group;
+    }
+
+    .results-table tbody {
+      display: table-row-group;
+    }
+  }
+
+  .results-table th,
+  .results-table td {
+    @apply border-b border-neutral-200 px-2 py-2 text-left text-xs whitespace-nowrap;
+  }
+
+  .results-table tr {
+    @apply bg-white transition-colors block;
+  }
+
+  @media (min-width: 768px) {
+    .results-table tr {
+      display: table-row;
+    }
+  }
+
+  .results-table tr:hover {
+    @apply bg-neutral-50;
+  }
+
+  .results-table tbody tr:nth-child(even) {
+    @apply bg-neutral-50;
+  }
+
+  .results-table tbody tr:nth-child(even):hover {
+    @apply bg-neutral-100;
+  }
+
+  .results-table tr:last-child td {
+    @apply border-b-0;
+  }
+
+  .results-table td:first-child,
+  .results-table th:first-child {
+    @apply font-semibold sticky left-0 bg-inherit z-10;
+  }
+
+  /* Sheet Components */
+  .sheet-button {
+    @apply bg-white border-none p-3 my-2 cursor-pointer text-left w-full text-sm font-semibold shadow-lg rounded-lg hover:bg-neutral-50 hover:shadow-xl active:scale-[0.99] transition-all duration-300;
+  }
+
+  .sheet-container {
+    @apply my-4 rounded-lg;
+  }
+
+  /* Table wrapper for horizontal scroll on mobile */
+  .sheet-results {
+    @apply mt-3 px-0 overflow-x-auto -mx-3;
+    /* Enable smooth scrolling on mobile */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .sheet-results::-webkit-scrollbar {
+    @apply h-2;
+  }
+
+  .sheet-results::-webkit-scrollbar-track {
+    @apply bg-neutral-100 rounded;
+  }
+
+  .sheet-results::-webkit-scrollbar-thumb {
+    @apply bg-neutral-400 rounded hover:bg-neutral-500;
+  }
+
+  /* FOOTER */
+  .footer-container {
+    @apply flex flex-col justify-between items-center text-sm px-4 py-6 gap-4 bg-white border-t border-neutral-200;
+  }
+
+  .footer-links {
+    @apply flex flex-col items-center text-center gap-4 w-full;
+  }
+
+  .footer-section {
+    @apply flex flex-col gap-1 items-center;
+  }
+
+  .footer-section h2 {
+    @apply text-sm font-semibold mb-1;
+  }
+
+  .footer-link {
+    @apply text-neutral-950 hover:text-neutral-600 transition-colors text-sm;
+  }
+
+  .footer-section-social {
+    @apply gap-3;
+  }
+
+  /* ALTERNANCE SECTIONS */
+  .section-alternate:nth-child(odd) {
+    @apply bg-white text-neutral-950;
+  }
+
+  .section-alternate:nth-child(even) {
+    @apply bg-neutral-950 text-white;
+  }
+}
+
+@layer utilities {
+  .section-light {
+    @apply bg-white text-neutral-950;
+  }
+
+  .section-dark {
+    @apply bg-neutral-950 text-white;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - Mobile First
+   ============================================ */
+
+/* Extra Small Devices (phones, < 480px) */
+@media (max-width: 479px) {
+  /* Hero Section */
+  .hero-title {
+    font-size: 1.875rem;
+    line-height: 1.25;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Header */
+  .header-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .header-logo h1 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .header-logo .w-4 {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  /* Challenge Cards */
+  .challenge-year {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .challenge-card {
+    padding: 1rem;
+  }
+
+  .challenge-date {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  /* Session Cards */
+  .session-card {
+    padding: 0.75rem;
+  }
+
+  .session-label {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .session-time {
+    font-size: 10px;
+  }
+
+  /* Buttons */
+  .btn-secondary,
+  .btn-primary,
+  .btn-large {
+    width: 100%;
+    height: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  /* Tables */
+  .results-table {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .results-table th,
+  .results-table td {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  /* Page Titles */
+  .text-5xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .text-4xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .text-xl {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  /* Footer */
+  .footer-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    gap: 1rem;
+  }
+
+  .footer-links {
+    gap: 1rem;
+  }
+
+  .footer-section h2 {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .footer-link {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  /* Content Width */
+  .content-width {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  /* Page Container */
+  .page-container {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* Small Devices (phones, 480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  /* Hero Section */
+  .hero-title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  /* Header */
+  .header-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .header-logo h1 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  /* Challenge Cards */
+  .challenge-year {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .challenge-card {
+    padding: 1.25rem;
+  }
+
+  /* Session Cards */
+  .session-card {
+    padding: 1rem;
+  }
+
+  /* Buttons */
+  .btn-secondary,
+  .btn-primary {
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .btn-large {
+    width: 100%;
+    max-width: 24rem;
+  }
+
+  /* Tables */
+  .results-table {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .results-table th,
+  .results-table td {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  /* Page Titles */
+  .text-5xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  /* Footer */
+  .footer-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+}
+
+/* Medium Devices (tablets, 768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Challenge Grid */
+  .challenge-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* Hero Section */
+  .hero-title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  /* Challenge Cards */
+  .challenge-year {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  /* Session Grid - 2 columns on tablet */
+  .session-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Content Width */
+  .content-width {
+    max-width: 48rem;
+  }
+
+  /* Buttons */
+  .btn-secondary,
+  .btn-primary,
+  .btn-large {
+    width: auto;
+    min-width: 140px;
+  }
+
+  /* Tables */
+  .results-table {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .results-table th,
+  .results-table td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+/* Large Devices (desktops, 1024px+) */
+@media (min-width: 1024px) {
+  /* Challenge Grid - 2 columns on large screens */
+  .challenge-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Hero Section */
+  .hero-section {
+    margin-bottom: 4rem;
+  }
+
+  /* Content Width */
+  .content-width {
+    max-width: 72rem;
+  }
+
+  /* Hover Effects Enhanced on Desktop */
+  .challenge-card:hover {
+    transform: scale(1.02);
+  }
+
+  .session-card:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Extra Large Devices (large desktops, 1440px+) */
+@media (min-width: 1440px) {
+  .content-width {
+    max-width: 80rem;
+  }
+
+  .hero-title {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .challenge-year {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+}
+
+/* Landscape Phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .page-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .hero-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .challenge-card {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .header-container,
+  .footer-container,
+  .burger-btn,
+  .burger-menu,
+  .btn-secondary,
+  .btn-primary,
+  .btn-large {
+    display: none;
+  }
+
+  .page-container {
+    background-color: white;
+  }
+
+  .challenge-card {
+    box-shadow: none;
+    border-width: 1px;
+    border-color: rgb(212 212 212);
+    break-inside: avoid;
+  }
+
+  .results-table {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    break-inside: avoid;
+  }
+}
