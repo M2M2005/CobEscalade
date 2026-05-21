@@ -353,8 +353,11 @@ async function tableauTopo(SHEET_ID) {
         row.push({
           text: numeroCouloir,
           alignment: "center",
-          style: "tableBody",
-          rowSpan: voiesCouloir.length
+          rowSpan: voiesCouloir.length,
+          margin: [0, (voiesCouloir.length - 1) * 5, 0, 0],
+          fontSize: 7,
+          bold: true,
+          style: "tableBody"
         });
       } else {
         // Voies suivantes: cellule vide (couverte par rowSpan)
