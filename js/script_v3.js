@@ -204,7 +204,7 @@ async function generatePDF(SHEET_ID, YEAR, NAME) {
 
         {
           image: imgPointCalcule,
-          width: 500,
+          width: 400,
           alignment: "center",
         },
         {text: " ", style: "saut"},
@@ -213,7 +213,7 @@ async function generatePDF(SHEET_ID, YEAR, NAME) {
           table: {
             headerRows: 0,
             widths: ["*", "*", "*", "*"],
-            heights: [40],
+            heights: [30],
             body: information,
           },
         },
