@@ -238,7 +238,7 @@ async function generatePDF(SHEET_ID, YEAR, NAME) {
           fillColor: "#f2f2f2",
         },
         tableBody: {
-          fontSize: 5,
+          fontSize: 4,
           alignment: "center",
           margin: [0, 0, 0, 0],
         },
